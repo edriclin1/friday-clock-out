@@ -27,8 +27,24 @@ function validate(element) {
 
     if (!element.checkValidity()) {
         toggleDanger(element, 1);
+        outTime.innerHTML = "N/A";
         return;
     }
+
+    var inputs = document.getElementsByTagName("input");
+    var numValid = 0;
+    for (var i = 0; i < inputs.length; i++) {
+        if (!inputs[i].checkValidity()) {
+            toggleDanger(inputs[i], 1);
+            outTime.innerHTML = "N/A";
+            numValid++;
+        } else {
+            toggleDanger(inputs[i], 0);
+        }
+    }
+
+    if (numValid > 0)
+        return;
 
     toggleDanger(element, 0);
     updateTime();
@@ -58,7 +74,6 @@ function updateTime() {
         toggleDanger(outLunch, 0);
         toggleDanger(inLunch, 0);
     }
-        
 
     var remainingHours = requiredHours - currentHours + lunchHours;
 
