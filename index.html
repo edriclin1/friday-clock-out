@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="/script.js"></script>
+</head>
+<div class="container">
+    <div class="column">
+        <div class="columns">
+            <div class="column">
+                <h2 class="is-size-1 has-text-centered is-large">Friday Clockout Calculator</h2>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <h2 class="is-size-3 has-text-centered">Hours this week</h2>
+                <div class="box has-background-primary">
+                    <div class="field">
+                        <label for="mon">Monday:</label><br />
+                        <div class="control has-icons-left">
+                            <input class="input is-medium" id="mon" type="number" value="8" step="0.01" min="0"
+                                max="12">
+                            <span class="icon is-left">
+                                <i class="fas fa-user-clock"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="tues">Tuesday:</label><br />
+                        <div class="control has-icons-left">
+                            <input class="input is-medium" id="tues" type="number" value="8" step="0.01" min="0"
+                                max="12">
+                            <span class="icon is-left">
+                                <i class="fas fa-user-clock"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="wed">Wednesday:</label><br />
+                        <div class="control has-icons-left">
+                            <input class="input is-medium" id="wed" type="number" value="8" step="0.01" min="0"
+                                max="12">
+                            <span class="icon is-left">
+                                <i class="fas fa-user-clock"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="thurs">Thursday:</label><br />
+                        <div class="control has-icons-left">
+                            <input class="input is-medium" id="thurs" type="number" value="8" step="0.01" min="0"
+                                max="12">
+                            <span class="icon is-left">
+                                <i class="fas fa-user-clock"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <h2 class="is-size-3 has-text-centered">Friday punch times</h2>
+                <div class="box has-background-primary">
+                    <div class="field">
+                        <label for="inTime">In for day:</label><br />
+                        <div class="control has-icons-left">
+                            <input class="input is-medium" id="inTime" type="time" value="08:00" required>
+                            <span class="icon is-left">
+                                <i class="fas fa-clock"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="outLunch">Out for lunch:</label><br />
+                        <div class="control has-icons-left">
+                            <input class="input is-medium" id="outLunch" type="time" min="inTime.value">
+                            <span class="icon is-left">
+                                <i class="fas fa-clock"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="inLunch">In for lunch:</label><br />
+                        <div class="control has-icons-left">
+                            <input class="input is-medium" id="inLunch" type="time" min="outLunch.value">
+                            <span class="icon is-left">
+                                <i class="fas fa-clock"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="is-size-3 has-text-centered">Clock out time:
+            <span id="clockOutTime" class="thicc">04:00 PM</span>
+        </h2>
+    </div>
+</div>

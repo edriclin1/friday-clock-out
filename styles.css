@@ -1,0 +1,13 @@
+* {
+    font-family: "Libre Franklin", sans-serif;
+}
+
+label {
+    font-weight: 700;
+}
+
+.thicc {
+    font-weight: 700;
+}
+
+.box:last-child { margin-bottom: 1.5rem; }
