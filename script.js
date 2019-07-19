@@ -43,8 +43,22 @@ function updateTime() {
         parseFloat(thurs.value);
 
     var lunchHours = 0;
-    if (outLunch.value != "" && inLunch.value != "")
+    if (outLunch.value != "" && inLunch.value != "") {
         lunchHours = diff(outLunch.value, inLunch.value);
+        toggleDanger(outLunch, 0);
+        toggleDanger(inLunch, 0);
+    }
+
+    else if ((outLunch.value == "" && inLunch.value != "") || (outLunch.value != "" && inLunch.value == "")) {
+        toggleDanger(outLunch, 1);
+        toggleDanger(inLunch, 1);
+    }
+
+    else {
+        toggleDanger(outLunch, 0);
+        toggleDanger(inLunch, 0);
+    }
+        
 
     var remainingHours = requiredHours - currentHours + lunchHours;
 
